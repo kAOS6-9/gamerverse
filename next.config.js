@@ -2,7 +2,12 @@
 const nextConfig = {
     experimental:{
         appDir: false,
-    }
+    },
+    images: {
+        domains: [
+          'https://kaos6-9.github.io/gamerverse/',
+        ]
+      },
 };
 
 module.exports = 
