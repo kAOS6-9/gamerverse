@@ -13,6 +13,7 @@ const nextConfig = {
         unoptimized: true,
       },
     reactStrictMode: true,
+    basePath: process.env.NODE_ENV === "production" ? "kaos6-9.github.io/gamerverse": undefined,
 };
 
 module.exports = nextConfig
