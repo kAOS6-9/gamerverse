@@ -10,10 +10,10 @@ import axios from 'axios';
 const Insights = () => {
   const [news, setNews] = useState([])
   useEffect(() => {
-    axios.get("https://newsapi.org/v2/everything?q=metaverse&pageSize=5&apiKey=06e8bc0cd8ba4f53843572f35d47d6e8")
+    axios.get("https://newsdata.io/api/1/news?apikey=pub_31952dfaa7698fdba39b8f085c4819a8014a3&q=video%20games&language=en&category=technology&size=3")
     .then((res) => {
-      console.log(res.data.articles);
-      setNews(res.data.articles)
+      console.log(res.data.results);
+      setNews(res.data.results)
     })
   },[])
   return (
@@ -30,14 +30,14 @@ const Insights = () => {
         textStyles="text-center"
       />
       <TitleText
-        title="Metaverse News"
+        title="Gaming News"
         textStyles='text-center'
       />
       <div className='mt-[50px] flex flex-col gap-[30px]'>
           {news.map((val, index) => (
             <Card
-              key={val.id}
-              date={val.publishedAt}
+              key={val.article_id}
+              date={val.pubDate}
               {...val}
               index={index}/>
           ))}
