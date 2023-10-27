@@ -13,7 +13,7 @@ const nextConfig = {
         unoptimized: true,
       },
     reactStrictMode: true,
-    basePath: process.env.NODE_ENV === "production" ? "/gamerverse": undefined,
+    basePath: "/gamerverse",
 };
 
 module.exports = nextConfig
