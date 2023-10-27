@@ -3,20 +3,16 @@ const nextConfig = {
     experimental:{
         appDir: false,
     },
-    
-};
-
-module.exports = 
-{
-    nextConfig: nextConfig,
     eslint: {
         // Warning: This allows production builds to successfully complete even if
         // your project has ESLint errors.
         ignoreDuringBuilds: true,
-      },
-      output: "export",
-      images: {
+    },
+    output: "export",
+    images: {
         unoptimized: true,
       },
-      reactStrictMode: true,
-}
+    reactStrictMode: true,
+};
+
+module.exports = nextConfig
