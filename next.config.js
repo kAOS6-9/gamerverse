@@ -12,8 +12,6 @@ const nextConfig = {
     images: {
         unoptimized: true,
       },
-    reactStrictMode: true,
-    basePath: "kaos6-9.github.io/gamerverse",
 };
 
 module.exports = nextConfig
