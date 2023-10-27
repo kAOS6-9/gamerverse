@@ -13,7 +13,7 @@ const nextConfig = {
         unoptimized: true,
       },
     reactStrictMode: true,
-    basePath: "/gamerverse",
+    basePath: "kaos6-9.github.io/gamerverse",
 };
 
 module.exports = nextConfig
