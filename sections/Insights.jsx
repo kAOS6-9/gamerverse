@@ -9,11 +9,18 @@ import axios from 'axios';
 
 const Insights = () => {
   const [news, setNews] = useState([])
+  var options = {
+    method: 'GET',
+    url: 'https://api.newscatcherapi.com/v2/search',
+    params: {q: 'metaverse', lang: 'en', sort_by: 'relevancy', page: '1',page_size: '3',topic: 'tech'},
+    headers: {
+      'x-api-key': '5xLlLEPtO0rL4t1c0oOZQcMOFuImBJZ1PWmEME6bFn8'
+    }
+  };
   useEffect(() => {
-    axios.get("https://newsdata.io/api/1/news?apikey=pub_31952dfaa7698fdba39b8f085c4819a8014a3&q=video%20games&language=en&category=technology&size=3")
-    .then((res) => {
-      console.log(res.data.results);
-      setNews(res.data.results)
+    axios.request(options).then((res) => {
+      console.log(res.data.articles)
+      setNews(res.data.articles)
     })
   },[])
   return (
@@ -30,14 +37,15 @@ const Insights = () => {
         textStyles="text-center"
       />
       <TitleText
-        title="Gaming News"
+        title="Metaverse News"
         textStyles='text-center'
       />
       <div className='mt-[50px] flex flex-col gap-[30px]'>
           {news.map((val, index) => (
             <Card
-              key={val.article_id}
-              date={val.pubDate}
+              key={val._id}
+              date={val.published_date}
+              excerpt={val.excerpt}
               {...val}
               index={index}/>
           ))}
